@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="menu.css">
+<!DOCTYPE html>
+<html>
+    <head><title>Menu</title></head>
+    <body>
+        <form name="f">
+            <center>
+                <h21><u>Online Hostel Management</u></h21>
+                <h1>Menu</h1>
+            
+            <table border="1">
+                <tr>
+                    <th><input type=button value="Employee" onclick="menuemployee()"></th>
+                    <th><input type=button value="Hostel" onclick="menuhostel()"></th>
+                    <th><input type=button value="Room Type" onclick="menuroom_type()"></th>
+                    <th><input type=button value="Room" onclick="menuroom()"></th>
+                    <th><input type=button value="Customer" onclick="menucustomer()"></th>
+                    <th><input type=button value="Booking" onclick="menubooking()"></th>
+                    <th><input type=button value="Payment" onclick="menupayment()"></th>
+                </tr>
+            </table>
+            </center>
+            <input type="button" value="Log Out"  onclick="loginn()" class="logoutcode">
+        </form>
+    </body>
+</html>
+<script>
+    function menuemployee()
+    {
+        window.open("employee.html","_self");
+    }
+    function menuhostel()
+    {
+        window.open("hostel.html","_self");
+    }
+    function menuroom_type()
+    {
+        window.open("room_type.html","_self");
+    }
+    function menuroom()
+    {
+        window.open("room.html","_self");
+    }
+    function menucustomer()
+    {
+        window.open("customer_details.html","_self");
+    }
+    function menubooking()
+    {
+        window.open("booking.html","_self");
+    }
+    function menupayment()
+    {
+        window.open("payment.html","_self");
+    }
+    function loginn()
+    {
+        window.open("index.html","_self");
+    }
+</script>

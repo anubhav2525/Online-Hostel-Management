@@ -1,0 +1,98 @@
+body{
+    background-color: aqua;
+}
+input[type=text]
+{
+    width: 300;
+    height: 30;
+    border-radius: 10px;
+    border-width: 2;
+    text-align:center;
+    font-size:large;
+    font-weight:bold;
+}
+input[type=date]
+{
+    width: 110;
+    height: 30;
+    border-radius: 10px;
+    border-width: 2;
+}
+select
+{
+    width: 120;
+    height: 30;
+    border-radius: 10px;
+    border-width: 2;
+}
+table{
+    height: 900;
+    width: 1280; 
+    border-radius: 40px;
+    background-color: aqua;
+}
+th{
+    border-width: 0ch;
+}
+input[type=button]
+{
+   height: 40;
+   width: 140;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764); color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+    text-align: center;
+
+}
+input[type=submit]
+{
+   height: 40;
+   width: 140;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764);
+   color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+text-align: center;
+
+}
+.select1
+{
+   height: 40;
+   width: 140;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764);
+   color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+text-align: center;
+
+}
+input[type=button]:hover{
+    background-color: yellow;
+}
+input[type=submit]:hover{
+    background-color: yellow;
+}
+.select1:hover{
+    background-color: yellow;
+}

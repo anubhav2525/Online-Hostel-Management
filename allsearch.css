@@ -1,0 +1,47 @@
+body{
+    background-color: aqua;
+}
+table{
+    background-color: azure;
+    border-width: 0ch;
+    margin-top: 20;
+}
+th{
+    border-color: black;
+    border-width: 2;
+    font-size: small;
+    width: 100;
+    text-align: center;
+    background-color: rgb(246, 246, 187);
+}
+td
+{
+    border-bottom: 0ch;
+    border-right: 0ch;
+    border-color: black;
+    border-width: 2;
+    font-size: small;
+    width: 100;
+    text-align: center;
+}
+input[type=button]
+{
+    background-color: rgb(221, 216, 216);
+    border-width: 0.5;
+    margin-top: 20;
+    font-weight: bold;
+    border-radius:30;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+input[type=button]:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.42);
+    cursor: pointer;
+}
+h1:hover{
+    color: white;
+}
+h3:hover{
+    color: white;
+}

@@ -1,0 +1,104 @@
+drop user hostel cascade
+/
+create user hostel identified by hostel
+/
+grant dba to hostel
+/
+conn hostel/hostel
+/
+create table Employee
+(
+	Staff_id nvarchar2(50) constraint staffi_d_pk1 primary key,
+	constraint staff_id_pk2 check(staff_id like 'E___'),
+	Email_id nvarchar2(50),
+	First_name nvarchar2(100),
+	Last_name nvarchar2(100),
+	Dob nvarchar2(20),
+	Address nvarchar2(200),
+	suburb nvarchar2(200),
+	Postcode number(10),
+	State nvarchar2(30),
+	Phone nvarchar2(20)
+)
+/
+create table hostel
+(
+	Hostel_id nvarchar2(10) constraint hostel_id_pk1 primary key,
+	constraint hostel_id_pk2 check(hostel_id like 'H___'),
+	Name nvarchar2(100),
+	Address nvarchar2(200),
+	Suburb nvarchar2(200),
+	Postcode number(8),
+	State nvarchar2(30),
+	Phone nvarchar2(20),
+	Manager_id nvarchar2(50) constraint Manager_Id_Invalid references employee(staff_id) on delete cascade
+)
+/
+alter table employee modify hostel_id constraint Hostel_Id_Not_Found references hostel(hostel_id) on delete cascade
+/
+create table room_type
+(
+	Room_type nvarchar2(30) constraint Room_Type_Invalid primary key,
+	constraint Room_Type_Invalid check(room_type in('ac','single')),
+	Room_name nvarchar2(50),
+	Room_price number(8)
+)
+/
+create table Room
+(
+	Room_id nvarchar2(5) constraint Room_Id_pk1 primary key,
+	constraint Room_id_pk2 check(room_id like 'R___'),
+	Room type nvarchar2(30) 
+	Room_image nvarchar2(100),
+	Room_description nvarchar2(100),
+	Hostel_id nvarchar2(10) constraint Hostel_id_invalid references hostel(hostel_id) on delete cascade
+)
+/
+
+create table customer_details
+(
+	Customer_id nvarchar2(50) constraint Customer_Id_Invalid primary key,
+	constraint Customer_Id_Invalid check(customer_id like'C___%'),
+	Email_id nvarchar2(50),
+	First_name nvarchar2(100),
+	Last_name nvarchar2(100),
+	Address nvarchar2(200),
+	Suburb nvarchar2(200),
+	Postcode number(5),
+	State nvarchar2(30),
+	Phone nvarchar2(20),
+	Password nvarchar2(30)
+)
+/
+create table Payment
+(
+	Payment_id nvarchar2(50) constraint Payment_id_pk1 primary key,
+	constraint Payment_id_pk2 check(payment_id like'P___%'),
+	Customer_id nvarchar2(50) constraint Customer_id_not_found references customer_details(customer_id) on delete cascade,
+	Booking_id nvarchar2(50) constraint Booking_id_not_found references booking(booking_id) on delete cascade,
+	First_name nvarchar2(100),
+	Last_name nvarchar2(100),
+	Credit_card_number number(20),
+	Expire_date nvarchar2(10)
+)
+/
+create table Booking
+(
+	Booking_id nvarchar2(50) constraint Booking_Id_Invalid primary key,
+	constraint Booking_Id_Invalid check(booking_id like 'B___%'),
+	Customer_id nvarchar2(50) constraint customer_id_does_not_found references customer_details(customer_id) on delete cascade,
+	Room_id nvarchar2(5) constraint Room_Id_Invalid references room(room_id) on delete cascade,
+	Booking_date nvarchar2(10),
+	Check_in_date nvarchar2(10),
+	Check_out_date nvarchar2(10),
+	Number_of_night nvarchar2(5)
+)
+/
+create table Catalog
+(
+	Email_address nvarchar2(50)
+)
+/
+
+
+ constraint hostel_id_not_match references hostel(hostel_id) on delete cascade

@@ -1,0 +1,40 @@
+body{
+   background-image: url(MenuBackground.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+table{
+    border-width: 0ch;
+
+}
+th{
+    border-width: 0ch;
+}
+h21{
+    font-style: oblique;
+    font-weight: 600;
+    font-size:50;
+    margin-left: 20;
+
+}
+
+input[type=button]{
+    height: 50;
+    width: 150;
+    font-size: large;
+    font-weight: 700;
+    color: white;
+    background:linear-gradient(#66ffff,#000066);
+    border-radius: 30px;
+    border-bottom: #66ffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+input[type=button]:hover{
+    background:linear-gradient(#66ff66,#ffccff);
+    color: black;
+}
+.logoutcode{
+    margin-top: 360;
+    margin-left: 1100;
+}

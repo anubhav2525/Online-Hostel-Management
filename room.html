@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="room.css">
+<html>
+<head><title>Room Details</title></head>
+<body>
+    <form name="f" method="post" action="room1.jsp">
+        <center><h1><u>Online Hostel Management</u></h1>
+                <h2><u>Room Detail</u></h2>
+        <table border=3>
+            <tr>
+                <th align="left">Room Number</th>
+                <th><input type=text name=t1></th>
+            </tr>
+            <tr>
+                <th align="left">Room Image</th>
+                <th><input type=text name=t2></th>
+            </tr>
+            <tr>
+                <th align="left">Room Description</th>
+                <th><input type=text name=t3 onkeypress="return allowOnlyLetters(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">Hostel Id</th>
+                <th><input type=text name=t4></th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="button" value="New" onclick="clean()">
+                    <input type="submit" value="Save" name="b1">
+                    <input type="submit" value="Delete" name="b1">
+                    <input type="button" value="Menu" onclick="menu()">
+                    <br>
+                    <input type="submit" value="AllSearch" name="b1">
+                    <select name=s class="select1">
+                    	<option>Room_Number</option>
+                    	<option>Room_Type</option>
+                    	<option>Hostel_Id</option>
+                    </select>
+                    <input type="text" name="t5">
+                    <input type="submit" value="Search" name="b1">
+                </th>
+            </tr>
+        </table>
+        </center>
+    </form>
+</body>
+</html>
+<script>
+    function clean()
+    {
+        f.t1.value=""
+        f.t2.value=""
+        f.t3.value=""
+        f.t4.value=""
+        f.t5.value=""
+    }
+    function menu()
+    {
+        window.open("menu.html","_self")
+    }
+    // Allow only letter
+	function allowOnlyLetters(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode > 64 && charCode <91) || (charCode >96 && charCode <123) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Alphabets");
+			return false;
+			}
+	}
+	// Allow only Number
+	function allowOnlyNumber(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode >=48 && charCode<=57) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Numbers");
+			return false;
+			}
+	}
+</script>

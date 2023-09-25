@@ -1,0 +1,81 @@
+body{
+    background-color: rgba(200, 255, 0, 0.37);
+}
+input[type=text]
+{
+    width: 200;
+    height: 30;
+    border-radius: 10px;
+    border-width: 2;
+}
+table{
+    height: 400;
+    width: 600; 
+    border-radius: 40px;
+    border-color: black;
+    border-width: 10;
+    background-color: rgba(200, 255, 0, 0);
+}
+th{
+    border-width: 0ch;
+}
+input[type=button]
+{
+   height: 40;
+   width: 100;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764); color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+    text-align: center;
+
+}
+input[type=submit]
+{
+   height: 40;
+   width: 100;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764);
+   color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+text-align: center;
+}
+.select1
+{
+   height: 40;
+   width: 170;
+   font-size: large;
+   font-weight: bolder;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border-width: 3;
+   border-radius: 30px;
+   background-color:rgba(64, 243, 94, 0.764);
+   color:black;
+   border-color: black;
+   margin-top: 10;
+   margin-left: 10;
+   margin-right: 10;
+    text-align: center;
+}
+input[type=button]:hover{
+    background-color: yellow;
+}
+input[type=submit]:hover{
+    background-color: yellow;
+}
+.select1:hover{
+    background-color: yellow;
+}

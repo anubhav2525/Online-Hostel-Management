@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="hostel.css">
+<html>
+    <head>
+        <title>Hostel Details</title>
+    </head>
+    <body>
+        <form name="f" method="post" action="hostel1.jsp">
+            <center><h1><u>Online Hostel Management</u></h1>
+            <h2><u>Hostel Details</u></h2>
+        <table border=3>
+            <tr>
+                <th align=left>Hostel Id</th>
+                <th><input type=text name=t1></th>
+                <th align="left">Hostel Name</th>
+                <th><input type=text name=t2 onkeypress="return allowOnlyLetters(event,this)"></th>
+            </tr>
+            <tr>
+                <th align=left>Address</th>
+                <th><input type=text name=t3></th>
+                <th align=left>City</th>
+                <th><input type=text name=t4 onkeypress="return allowOnlyLetters(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">State</th>
+                <th><input type=text name=t5 onkeypress="return allowOnlyLetters(event,this)"></th>
+                <th align="left">Pincode</th>
+                <th><input type=text name=t6 onkeypress="return allowOnlyNumber(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">Phone Number</th>
+                <th><input type=text name=t7 onkeypress="return allowOnlyNumber(event,this)"></th>
+                <th align="left">Manager Id</th>
+                <th><input type=text name=t8></th>
+            </tr>
+            <tr>
+                <th align="left">Number of Employees</th>
+                <th><input type=text name=t9 onkeypress="return allowOnlyNumber(event,this)"></th>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <input type="button" value="New" onclick="clean()">
+                    <input type="submit" value="Save" name="b1">
+                    <input type="submit" value="Delete" name="b1">
+                    <input type="button" value="Menu" onclick="menu()">
+                    <br>
+                    <input type="submit" value="AllSearch" name="b1">
+                    <select name="s" class="select1">
+                        <option align="center">Hostel_Name</option>
+                    	<option align="center">Manager_Id</option>
+                        <option align="center">Hostel_Id</option>
+                        <option align="center">Phone</option>
+                        <option align="center">State</option>
+                    	<option align="center">City</option>
+                    </select>
+                    <input type="text" name="t10">
+                    <input type="submit" value="Search" name="b1">
+                </th>
+            </tr>
+        </table>
+        </center>
+    </body>
+</html>
+<script>
+    function clean()
+    {
+        f.t1.value=""
+        f.t2.value=""
+        f.t3.value=""
+        f.t4.value=""
+        f.t5.value=""
+        f.t6.value=""
+        f.t7.value=""
+        f.t8.value=""
+        f.t9.value=""
+        f.t10.value=""
+    }
+    function menu()
+    {
+        window.open("menu.html","_self")
+    }
+    // Allow only letter
+	function allowOnlyLetters(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode > 64 && charCode <91) || (charCode >96 && charCode <123) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Alphabets");
+			return false;
+			}
+	}
+	// Allow only Number
+	function allowOnlyNumber(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode >=48 && charCode<=57) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Numbers");
+			return false;
+			}
+	}
+</script>

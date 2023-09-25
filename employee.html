@@ -1,0 +1,170 @@
+<link rel="stylesheet" href="employee.css">
+<html>
+<head><title>Employee Details</title></head>
+<form name=f method=post action="employee1.jsp">
+<body>
+	<center>
+		<h1><u>Online Hostel Management</u></h1>
+		<h2><u>Employee Details</u></h2>	
+	<table border=3>
+	<tr>
+		<th align="left">Staff Id</th>
+		<th><input type=text name=t1></th>
+		<th align="left">Email Address</th>
+		<th><input type=text name=t2></th>
+	</tr>
+	<tr>
+		<th align="left">First Name</th>
+		<th><input type=text name=t3 onkeypress="return allowOnlyLetters(event,this)"></th>
+		<th align="left">Last Name</th>
+		<th><input type=text name=t4 onkeypress="return allowOnlyLetters(event,this)"></th>
+	</tr>
+	<tr>
+		<th align="left">Father's Name</th>
+		<th><input type=text name=t5 onkeypress="return allowOnlyLetters(event,this)"></th>
+		<th align="left">Gender</th>
+		<th><select name="t6">
+				<option>Male</option>
+				<option>Female</option>
+				<option>Transgender</option>
+			</select>
+		</th>
+	</tr>
+	<tr>
+		<th align="left">Age</th>
+		<th><input type=text name=t7 onkeypress="return allowOnlyNumber(event,this)"></th>
+		<th align="left">Date of Birth</th>
+		<th><input type=date name=t8></th>
+	</tr>
+	<tr>
+		<th align="left">Phone Number</th>
+		<th><input type=text name=t9 onkeypress="return allowOnlyNumber(event,this)"></th>
+		<th align="left">Address</th>
+		<th><input type=text name=t10></th>
+	</tr>
+	<tr>
+		<th align="left">State</th>
+		<th><input type=text name=t11 onkeypress="return allowOnlyLetters(event,this)"></th>
+		<th align="left">City</th>
+		<th><input type=text name=t12 onkeypress="return allowOnlyLetters(event,this)"></th>
+	</tr>
+	<tr>
+		<th align="left">Pincode</th>
+		<th><input type=text name=t13 onkeypress="return allowOnlyNumber(event,this)"></th>
+		<th align="left">Description</th>
+		<th><input type=text name=t14 onkeypress="return allowOnlyLetters(event,this)"></th>
+	</tr>
+	<tr>
+		<th align="left">Status</th>
+		<th><select name=t15>
+				<option>Active</option>
+				<option>Inactive</option>
+			</select>
+		</th>
+		<th align="left">Joining Date</th>
+		<th><input type=date name=t16></th>
+	</tr>
+	<tr>
+		<th align="left">Ending Date</th>
+		<th><input type=date name=t17></th>
+		<th align="left">Job Title</th>
+		<th><input type=text name=t18 onkeypress="return allowOnlyLetters(event,this)"></th>
+	</tr>
+	<tr>
+		<th colspan="4">
+			<input type="button" value="New" onclick="clean()">
+			<input type="submit" value="Save" name="b1">
+			<input type="submit" value="Delete" name="b1">
+			<input type="button" value="Menu" onclick="menu()">
+			<br>
+			<input type="submit" value="AllSearch" name="b1">
+			<select name="s" class="select1">
+				<option align="center">Staff_Id</option>
+				<option align="center">Email_id</option>
+				<option align="center">First_Name</option>
+				<option align="center">Fathers_Name</option>
+				<option align="center">Phone</option>
+				<option align="center">City</option>
+				<option align="center">State</option>
+				<option align="center">Status</option>
+				<option align="center">Job_Title</option>			
+			</select>
+			<input type="text" name=t19>
+			<input type="submit" value="Search" name="b1">
+		</th>
+	</tr>
+</table>
+</center>
+</body>
+</form>
+</html>
+<script>
+	//Clear the records of all field on press new button
+	function clean()
+	{
+		f.t1.value=""
+		f.t2.value=""
+		f.t3.value=""
+		f.t4.value=""
+		f.t5.value=""
+		f.t6.value=""
+		f.t7.value=""
+		f.t8.value=""
+		f.t9.value=""
+		f.t10.value=""
+		f.t11.value=""
+		f.t12.value=""
+		f.t13.value=""
+		f.t14.value=""
+		f.t15.value=""
+		f.t16.value=""
+		f.t17.value=""
+		f.t18.value=""
+		f.t19.value=""
+	}
+	//This is menu Page 
+	function menu()
+	{
+		window.open("menu.html","_self")
+	}
+	// Allow only letter
+	function allowOnlyLetters(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode > 64 && charCode <91) || (charCode >96 && charCode <123) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Alphabets");
+			return false;
+			}
+	}
+	// Allow only Number
+	function allowOnlyNumber(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode >=48 && charCode<=57) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Numbers");
+			return false;
+			}
+	}
+</script>

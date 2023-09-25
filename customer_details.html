@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="customer.css">
+<html>
+    <head><title>Customer Details</title></head>
+    <body>
+        <form name="f" method="post" action="customer.jsp">
+            <center><h1><u>Online Hostel Management</u></h1>
+                    <h2><U>Customer Details</U></h2>
+        <table border=2>
+            <tr>
+                <th align="left">Customer Id</th>
+                <th><input type=text name=t1></th>
+                <th align="left">Email Address</th>
+                <th><input type=text name=t2></th>
+            </tr>
+            <tr>
+                <th align="left">First Name</th>
+                <th><input type=text name=t3 onkeypress="return allowOnlyLetters(event,this)"></th>
+                <th align="left">Last Name</th>
+                <th><input type=text name=t4 onkeypress="return allowOnlyLetters(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">Gender</th>
+                <th>
+                    <select name="t5">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Transgender</option>
+                    </select>
+                </th>
+                <th align="left">Age</th>
+                <th><input type=text name=t6 onkeypress="return allowOnlyNumber(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">Address</th>
+                <th><input type=text name=t7></th>
+                <th align="left">City</th>
+                <th><input type=text name=t8 onkeypress="return allowOnlyLetters(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">State</th>
+                <th><input type=text name=t9 onkeypress="return allowOnlyLetters(event,this)"></th>
+                <th align="left">Pincode</th>
+                <th><input type=text name=t10 onkeypress="return allowOnlyNumber(event,this)"></th>
+            </tr>
+            <tr>
+                <th align="left">Phone Number</th>
+                <th><input type=text name=t11 onkeypress="return allowOnlyNumber(event,this)"></th>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <input type="button" value="New" onclick="clean()">
+                    <input type="submit" value="Save" name="b1">
+                    <input type="submit" value="Delete" name="b1">
+                    <input type="button" value="Menu" onclick="menu()">
+                    <br>
+                    <input type="submit" value="AllSearch" name="b1">
+                    <select name=s class="select1">
+                    	<option>Customer_Id</option>
+                        <option>First_Name</option>
+                    	<option>Email_Id</option>
+                        <option>Phone</option>
+                    	<option>State</option>
+                        <option>City</option>
+                    	<option>Age</option>
+                    </select>
+                    <input type="text" name="t12">
+                    <input type="submit" value="Search" name="b1">
+                </th>
+            </tr>
+        </table>
+        </center>
+        </form>
+    </body>
+</html>
+<script>
+    function clean()
+    {
+        f.t1.value=""
+        f.t2.value=""
+        f.t3.value=""
+        f.t4.value=""
+        f.t5.value=""
+        f.t6.value=""
+        f.t7.value=""
+        f.t8.value=""
+        f.t9.value=""
+        f.t10.value=""
+        f.t11.value=""
+        f.t12.value=""
+    }
+    function menu()
+    {
+        window.open("menu.html","_self")
+    }
+    // Allow only letter
+	function allowOnlyLetters(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode > 64 && charCode <91) || (charCode >96 && charCode <123) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Alphabets");
+			return false;
+			}
+	}
+	// Allow only Number
+	function allowOnlyNumber(e,t)
+	{
+		if(window.event)
+			{
+				var charCode = window.event.keyCode;
+			}
+		else if(e)
+			{
+			var charCode=e.which;
+			}
+		else{return true;}
+		if((charCode >=48 && charCode<=57) || (charCode ==32))
+			return true;
+		else
+			{
+			alert("Please Enter Only Numbers");
+			return false;
+			}
+	}
+</script>
